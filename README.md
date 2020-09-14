@@ -1,4 +1,4 @@
-# testwebpack
+# viewer
 
 > A Vue.js project
 
