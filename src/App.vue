@@ -95,7 +95,7 @@ export default {
   mounted() {
     this.viewer = OpenSeadragon({
       id: "openseadragon",
-      prefixUrl: "static/images/",
+      prefixUrl: "/viewer/static/images/",
       tileSources: ["/viewer/static/output/ara.dzi"],
       showNavigator: true,
     });
