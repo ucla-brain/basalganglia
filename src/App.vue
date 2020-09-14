@@ -61,7 +61,7 @@ export default {
     setLabel(item) {
       var inputBoxDisplay = "";
       if (item.id == 0) {
-        this.viewer.open(["/static/output/ara.dzi"]);
+        this.viewer.open(["static/output/ara.dzi"]);
       } else {
         if (this.searchParam == "case_id") {
           inputBoxDisplay = item.name;
@@ -75,8 +75,8 @@ export default {
         }
       }
       this.viewer.open([
-        "/static/output/ara.dzi",
-        "/static/output/" + this.item.name + ".dzi",
+        "static/output/ara.dzi",
+        "static/output/" + this.item.name + ".dzi",
       ]);
       return inputBoxDisplay;
     },
@@ -95,8 +95,8 @@ export default {
   mounted() {
     this.viewer = OpenSeadragon({
       id: "openseadragon",
-      prefixUrl: "/static/images/",
-      tileSources: ["/static/output/ara.dzi"],
+      prefixUrl: "static/images/",
+      tileSources: ["static/output/ara.dzi"],
       showNavigator: true,
     });
   },
