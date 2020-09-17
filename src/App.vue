@@ -66,7 +66,7 @@ export default {
       }
   },
   mounted() {
-    this.selectedLayers = [this.githubPrefix+"/static/output/ara.dzi"];
+    this.selectedLayers = [this.githubPrefix+"/static/output/ara-whitebg.dzi"];
     this.viewer = OpenSeadragon({
       id: "openseadragon",
       prefixUrl: "/viewer/static/images/",
