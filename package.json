@@ -11,10 +11,17 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "bootstrap": "^4.5.2",
+    "bootstrap-vue": "^2.17.0",
     "openseadragon": "^2.4.2",
+    "tailwindcss": "^1.8.10",
     "vue": "^2.5.2",
+    "vue-faq-accordion": "^1.6.2",
+    "vue-multilevel-accordion": "^1.0.8",
+    "vue-prism": "^1.0.5",
     "vue-router": "^3.0.1",
-    "vue-suggestion": "^1.1.0"
+    "vue-suggestion": "^1.1.0",
+    "vue-tailwind": "^1.2.6"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

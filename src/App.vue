@@ -1,131 +1,124 @@
 <template>
-  <div>
+  <div id="topdiv">
     <div id="openseadragon" style="width: 100%; height: 600px;">
-      <div id="search">
-        <div id="radioButtons">
-        <label id="caseId">
-          <input
-            type="radio"
-            name="search_param"
-            @change="radioButtonClicked($event)"
-            class="form-control"
-            value="case_id"
-          />Case ID
-        </label>
-        <label id="domain">
-          <input
-            type="radio"
-            name="search_param"
-            @change="radioButtonClicked($event)"
-            class="form-control"
-            value="domain"
-          />Domain
-        </label>
-        </div><!-- end of radioButtons -->
-        <p id="currentCase" v-if="item && item.id">Currently displayed case: {{ item.name }}</p>
-        <vue-suggestion
-          v-model="item"
-          :items="items"
-          :setLabel="setLabel"
-          :itemTemplate="itemTemplate"
-          @changed="inputChange"
-        ></vue-suggestion>
-      </div><!-- end of search -->
-    </div><!-- end of openseadragon -->
+<multilevel-accordion :tree="tree" :marginLeft="2">
+<div slot-scope="{ tree, expanded, leaf }">
+  <div
+    class="relative mb-3 border rounded-full cursor-pointer text-white"
+    style="transition: box-shadow 0.5s, background-color 0.5s, color 0.5s; border-style:none;"
+  >
+  <input v-if="leaf" type="checkbox" :id="tree.text" :value="tree.text" @change="select(tree.text)">
+  <label v-if="leaf" :for="tree.text">{{ tree.text }}</label>
+    <p
+      v-if="!leaf"
+      class="domain relative text-left"
+      style="top: 0.05rem; left: 10px; font-size: 13px;"
+    >{{ expanded ? '−' : '+' }} {{ tree.text }}</p>
+  </div>
+  </div>
+</multilevel-accordion>
+      </div><!-- end of openseadragon -->
   </div> <!-- end of top div -->
 </template>
 
 <script>
 import OpenSeadragon from "openseadragon";
-import itemTemplate from "./components/ItemTemplate.vue";
 import caseIds from "./data/caseIds.js";
-import domains from "./data/domains.js";
+import MultilevelAccordion from "vue-multilevel-accordion";
+
 
 export default {
-  name: "app",
+  components: {
+      MultilevelAccordion
+    },
   data() {
     return {
-      itemsApi: [],
-      item: {},
-      items: [],
-      itemTemplate,
-      isLoading: true,
-      viewer: "",
-      searchParam: "",
+      githubPrefix: process.env.GITHUB_PREFIX,
+      tree: caseIds,
+      selectedLayers: []
     };
   },
   methods: {
-    radioButtonClicked(event) {
-      this.searchParam = event.target.value;
-    },
-    setLabel(item) {
-      var inputBoxDisplay = "";
-      if (item.id == 0) {
-        this.viewer.open(["/viewer/static/output/ara.dzi"]);
-      } else {
-        if (this.searchParam == "case_id") {
-          inputBoxDisplay = item.name;
-          this.item=item;
-        } else {
-          var caseId = caseIds.filter((caseId) => {
-            return caseId.domain == item.domain;
+      select(caseId) {
+        const prefix = this.githubPrefix;
+        const index = this.selectedLayers.indexOf(caseId);
+        if (index > -1) {
+          this.selectedLayers.splice(index, 1);
+          let tileSources = [];
+          this.selectedLayers.forEach(function(layer){
+            let tileSource = "";
+            if(!layer.includes(".dzi")){
+              tileSource = prefix+"/static/output/"+layer+".dzi";
+            }
+            else{
+              tileSource=layer;
+            }
+            tileSources.push(tileSource);
           });
-          this.item = caseId[0];
-          inputBoxDisplay = item.domain;
+          this.viewer.open(tileSources);
+        }
+        else{
+          this.selectedLayers.push(caseId);
+          this.viewer.addTiledImage({
+            tileSource: prefix+"/static/output/"+caseId+".dzi"
+          });
         }
       }
-      this.viewer.open([
-        "/viewer/static/output/ara.dzi",
-        "/viewer/static/output/" + this.item.name + ".dzi",
-      ]);
-      return inputBoxDisplay;
-    },
-    inputChange(text) {
-      if (this.searchParam == "case_id") {
-        this.items = caseIds.filter((item) =>
-          new RegExp(text.toLowerCase()).test(item.name.toLowerCase())
-        );
-      } else {
-        this.items = domains.filter((item) =>
-          new RegExp(text.toLowerCase()).test(item.domain.toLowerCase())
-        );
-      }
-    },
   },
   mounted() {
+    this.selectedLayers = [this.githubPrefix+"/static/output/ara.dzi"];
     this.viewer = OpenSeadragon({
       id: "openseadragon",
       prefixUrl: "/viewer/static/images/",
-      tileSources: ["/viewer/static/output/ara.dzi"],
+      tileSources: this.selectedLayers,
       showNavigator: true,
     });
-  },
-};
+  }
+}
 </script>
 
-<style scope>
-#search {
-  margin: auto;
-  position: absolute;
-  bottom: 50%;
-  right: 25px;
+<style>
+#topdiv {
+  background: black;
+}
+.accordion-root {
+  width: 15%;
+  height: 350px;
+  top: 100px;
   z-index: 1;
-  width: 200px;
-  background:rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  overflow-y: auto;
+  position: absolute;
+  left: 20px;
+  border-left: thin solid grey;
+  border-bottom: thin solid grey;
+  border-right: thin solid grey;
+  border-top: thick solid grey;
+  background-color: rgba(250,250,250,0.1);
 }
 
-#radioButtons {
-  width: 100%;
-  padding-bottom: 25px;
+.accordion-children {
+  border-style: none;
 }
 
-#currentCase {
-  font-style: italic;
-  margin: 0px;
+.text-xl {
+  font-size: 1rem;
 }
 
-#domain {
-  float:right;
+.text-center {
+  font-size: 13px;
 }
+
+.mb-3 {
+  margin-bottom: 0.25rem;
+}
+
+.domain {
+  border-style: none;
+  width: 100px;
+}
+
+label {
+  font-size: 13px;
+}
+
 </style>

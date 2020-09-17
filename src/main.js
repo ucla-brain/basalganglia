@@ -3,8 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import VueSuggestion from 'vue-suggestion'
-Vue.use(VueSuggestion)
+import VueTailwind from 'vue-tailwind'
+import VuePrism from "vue-prism";
+
+Vue.use(VuePrism);
+
+import "prismjs/themes/prism.css";
+import "./assets/styles/index.css";
+
+Vue.use(VueTailwind)
 
 Vue.config.productionTip = false
 

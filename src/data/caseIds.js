@@ -1,37 +1,221 @@
-export default [
-    { id: 0, name: 'None', domain: 'None'},
-    { id: 1, name: 'SW151231-01A', domain: 'CPi.dm.cd'},
-    { id: 2, name: 'SW160316-02A', domain: 'CPi.vl.vt'},
-    { id: 3, name: 'SW160504-01A', domain: 'CPi.vm.v'},
-    { id: 4, name: 'SW160522-01A', domain: 'CPr.imd'},
-    { id: 5, name: 'SW160527-01A', domain: 'CPi.vm.cvm'},
-    { id: 6, name: 'SW160615-01A', domain: 'CPc.i.d'},
-    { id: 7, name: 'SW160701-02A', domain: 'CPc.d.dm'},
-    { id: 8, name: 'SW160704-02A', domain: 'CPc.d.dl'},
-    { id: 9, name: 'SW160713-02A', domain: 'CPi.vl.cvl'},
-    { id: 10, name: 'SW160715-02A', domain: 'CPc.i.vl'},
-    { id: 11, name: 'SW160719-01A', domain: 'CPr.l.ls'},
-    { id: 12, name: 'SW160727-02B', domain: 'CPr.imv'},
-    { id: 13, name: 'SW160810-01B', domain: 'CPr.l.vm'},
-    { id: 14, name: 'SW170127-01A', domain: 'CPi.dl.d.r'},
-    { id: 15, name: 'SW170201-01B', domain: 'ACBsh.l'},
-    { id: 30, name: 'SW170201-01B', domain: 'ACBc'},
-    { id: 16, name: 'SW170201-02A', domain: 'ACBsh.m'},
-    { id: 17, name: 'SW170228-01A', domain: 'CPi.dl.imd'},
-    { id: 31, name: 'SW170228-01A', domain: 'CPi.vl.v'},
-    { id: 18, name: 'SW170317-01A', domain: 'CPi.vl.imv'},
-    { id: 19, name: 'SW170317-02A', domain: 'CPi.dl.d'},
-    { id: 20, name: 'SW170331-01A', domain: 'CPc.v.vl'},
-    { id: 32, name: 'SW170331-01A', domain: 'CPext.v.r'},
-    { id: 21, name: 'SW170407-02A', domain: 'CPi.dm.dl'},
-    { id: 33, name: 'SW170407-02A', domain: 'CPi.dm.d'},
-    { id: 22, name: 'SW170510-01A', domain: 'CPext.v.c'},
-    { id: 23, name: 'SW170517-01A', domain: 'CPr.m'},
-    { id: 34, name: 'SW170517-01A', domain: 'CPc.d.vm'},
-    { id: 24, name: 'SW170907-01A', domain: 'CPi.vm.vm'},
-    { id: 25, name: 'SW171019-02A', domain: 'CPi.dm.dm'},
-    { id: 26, name: 'SW171025-07A', domain: 'CPi.dm.im'},
-    { id: 27, name: 'SW171214-04A', domain: 'CPc.i.vm'},
-    { id: 28, name: 'SW180515-02A', domain: 'CPext.d'},
-    { id: 29, name: 'SW180608-03A', domain: 'CPc.v.vm'}
-  ];
+export default {
+  text: "Root",
+  children: [
+    {
+      text: 'CPi.dm.cd',
+      children: [
+        { text: 'SW151231-01A' }
+      ]
+    },
+    {
+      text: 'CPi.vl.vt',
+      children: [
+        { text: 'SW160316-02A' }
+      ]
+    },
+    {
+      text: 'CPi.vm.v',
+      children: [
+        { text: 'SW160504-01A' }
+      ]
+    },
+    {
+      text: 'CPr.imd',
+      children: [
+        { text: 'SW160522-01A' }
+      ]
+    },
+    {
+      text: 'CPi.vm.cvm',
+      children: [
+        { text: 'SW160527-01A' }
+      ]
+    },
+    {
+      text: 'CPc.i.d',
+      children: [
+        { text: 'SW160615-01A' }
+      ]
+    },
+    {
+      text: 'CPc.d.dm',
+      children: [
+        { text: 'SW160701-02A' }
+      ]
+    },
+    {
+      text: 'CPc.d.dl',
+      children: [
+        { text: 'SW160704-02A' }
+      ]
+    },
+    {
+      text: 'CPi.vl.cvl',
+      children: [
+        { text: 'SW160713-02A' }
+      ]
+    },
+    {
+      text: 'CPc.i.vl',
+      children: [
+        { text: 'SW160715-02A' }
+      ]
+    },
+    {
+      text: 'CPr.l.ls',
+      children: [
+        { text: 'SW160719-01A' }
+      ]
+    },
+    {
+      text: 'CPr.imv',
+      children: [
+        { text: 'SW160727-02B' }
+      ]
+    },
+    {
+      text: 'CPr.l.vm',
+      children: [
+        { text: 'SW160810-01B' }
+      ]
+    },
+    {
+      text: 'CPi.dl.d.r',
+      children: [
+        { text: 'SW170127-01A' }
+      ]
+    },
+    {
+      text: 'ACBsh.l',
+      children: [
+        { text: 'SW170201-01B' }
+      ]
+    },
+    {
+      text: 'ACBsh.m',
+      children: [
+        { text: 'SW170201-02A' }
+      ]
+    },
+    {
+      text: 'CPi.dl.imd',
+      children: [
+        { text: 'SW170228-01A' }
+      ]
+    },
+    {
+      text: 'CPi.vl.imv',
+      children: [
+        { text: 'SW170317-01A' }
+      ]
+    },
+    {
+      text: 'CPi.dl.d',
+      children: [
+        { text: 'SW170317-02A' }
+      ]
+    },
+    {
+      text: 'CPc.v.vl',
+      children: [
+        { text: 'SW170331-01A' }
+      ]
+    },
+    {
+      text: 'CPi.dm.dl',
+      children: [
+        { text: 'SW170407-02A' }
+      ]
+    },
+    {
+      text: 'CPext.v.c',
+      children: [
+        { text: 'SW170510-01A' }
+      ]
+    },
+    {
+      text: 'CPr.m',
+      children: [
+        { text: 'SW170517-01A' }
+      ]
+    },
+    {
+      text: 'CPi.vm.vm',
+      children: [
+        { text: 'SW170907-01A' }
+      ]
+    },
+    {
+      text: 'CPi.dm.dm',
+      children: [
+        { text: 'SW171019-02A' }
+      ]
+    },
+    {
+      text: 'CPi.dm.im',
+      children: [
+        { text: 'SW171025-07A' }
+      ]
+    },
+    {
+      text: 'CPc.i.vm',
+      children: [
+        { text: 'SW171214-04A' }
+      ]
+    },
+    {
+      text: 'CPext.d',
+      children: [
+        { text: 'SW180515-02A' }
+      ]
+    },
+    {
+      text: 'CPc.v.vm',
+      children: [
+        { text: 'SW180608-03A' }
+      ]
+    },
+    {
+      text: 'ACBc',
+      children: [
+        { text: 'SW170201-01B' }
+      ]
+    },
+    {
+      text: 'CPi.vl.v',
+      children: [
+        { text: 'SW170228-01A' }
+      ]
+    },
+    {
+      text: 'CPext.v.r',
+      children: [
+        { text: 'SW170331-01A' }
+      ]
+    },
+    {
+      text: 'CPi.dm.d',
+      children: [
+        { text: 'SW170407-02A' }
+      ]
+    },
+    {
+      text: 'CPc.d.vm',
+      children: [
+        { text: 'SW170517-01A' }
+      ]
+    },
+    {
+      text: 'CPi.vl.imv.r',
+      children: [
+        { text: 'SW170127-01A'}
+      ]
+    },
+    {
+      text: 'CPi.vl.v.r',
+      children: [
+        { text: 'SW170127-01A'}
+      ]
+    }
+  ]
+};
