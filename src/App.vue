@@ -93,7 +93,7 @@ export default {
   border-bottom: thin solid grey;
   border-right: thin solid grey;
   border-top: thick solid grey;
-  background-color: rgba(250,250,250,0.1);
+  background-color: rgba(20,20,20,1);
 }
 
 .accordion-children {
