@@ -175,7 +175,7 @@ export default {
     const prefix = this.githubPrefix;
     this.viewer = OpenSeadragon({
       id: "openseadragon",
-      prefixUrl: "/static/images/",
+      prefixUrl: "/viewer/static/images/",
       tileSources: this.githubPrefix + "/static/output/ara-whitebg.dzi",
       showNavigator: true,
     });
