@@ -194,9 +194,14 @@ export default {
 </script>
 
 <style>
+body {
+  background: black;
+}
+
 #topdiv {
   background: black;
 }
+
 .accordion-root {
   width: 15%;
   height: 350px;
