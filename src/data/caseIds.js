@@ -4,13 +4,13 @@ export default {
     {
       text: 'ACBc',
       children: [
-        { text: 'SW170201-01B' }
+        { text: 'SW170201-01B_ACBc' }
       ]
     },
     {
       text: 'ACBsh.l',
       children: [
-        { text: 'SW170201-01B' }
+        { text: 'SW170201-01B_ACBsh.l' }
       ]
     },
     {
@@ -34,7 +34,7 @@ export default {
     {
       text: 'CPc.d.vm',
       children: [
-        { text: 'SW170517-01A' }
+        { text: 'SW170517-01A_CPc.d.vm' }
       ]
     },
     {
@@ -58,7 +58,7 @@ export default {
     {
       text: 'CPc.v.vl',
       children: [
-        { text: 'SW170331-01A' }
+        { text: 'SW170331-01A_CPc.v.vl' }
       ]
     },
     {
@@ -82,7 +82,7 @@ export default {
     {
       text: 'CPext.v.r',
       children: [
-        { text: 'SW170331-01A' }
+        { text: 'SW170331-01A_CPext.v.r' }
       ]
     },
     {
@@ -94,13 +94,13 @@ export default {
     {
       text: 'CPi.dl.d.r',
       children: [
-        { text: 'SW170127-01A' }
+        { text: 'SW170127-01A_CPi.dl.d.r' }
       ]
     },
     {
       text: 'CPi.dl.imd',
       children: [
-        { text: 'SW170228-01A' }
+        { text: 'SW170228-01A_CPi.dl.imd' }
       ]
     },
     {
@@ -112,13 +112,13 @@ export default {
     {
       text: 'CPi.dm.d',
       children: [
-        { text: 'SW170407-02A' }
+        { text: 'SW170407-02A_CPi.dm.d' }
       ]
     },
     {
       text: 'CPi.dm.dl',
       children: [
-        { text: 'SW170407-02A' }
+        { text: 'SW170407-02A_CPi.dm.dl' }
       ]
     },
     {
@@ -148,19 +148,19 @@ export default {
     {
       text: 'CPi.vl.imv.r',
       children: [
-        { text: 'SW170127-01A'}
+        { text: 'SW170127-01A_CPi.vl.imv.r'}
       ]
     },
     {
       text: 'CPi.vl.v',
       children: [
-        { text: 'SW170228-01A' }
+        { text: 'SW170228-01A_CPi.vl.v' }
       ]
     },
     {
       text: 'CPi.vl.v.r',
       children: [
-        { text: 'SW170127-01A'}
+        { text: 'SW170127-01A_CPi.vl.v.r'}
       ]
     },
     {
@@ -214,7 +214,7 @@ export default {
     {
       text: 'CPr.m',
       children: [
-        { text: 'SW170517-01A' }
+        { text: 'SW170517-01A_CPr.m' }
       ]
     }
   ]

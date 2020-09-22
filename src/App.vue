@@ -27,10 +27,10 @@
             />
             <label
               v-if="leaf"
-              :for="tree.text"
+              :for="tree.text+'_checkbox'"
               class="cursor-pointer hover:text-blue-600"
               :class="tree.text"
-            >{{ tree.text }}</label>
+            >{{ tree.text.split("_")[0] }}</label>
             <p
               v-if="!leaf"
               :id="tree.text"
@@ -169,7 +169,7 @@ export default {
         // Remove each selected layer
         this.select(layers[i]);
       }
-    },
+    }
   },
   mounted() {
     const prefix = this.githubPrefix;
@@ -189,7 +189,7 @@ export default {
       });
     });
     this.allCaseIds = cases;
-  },
+  }
 };
 </script>
 
@@ -228,6 +228,12 @@ export default {
   font-style: italic;
   font-size: 13px;
   color: white;
+}
+
+@media only screen and (max-width: 415px) {
+  .accordion-root, #allClearToggles {
+    width: 30%;
+  }
 }
 
 .accordion-children {
