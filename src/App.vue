@@ -62,66 +62,89 @@
         </div>
       </multilevel-accordion>
       <div id="fileDownloads">
+        <p>Tables</p>
         <div>
-            <a href="./GPe58_boxgrid_data.csv">
+            <a href="/static/files/GPe58_boxgrid_data.csv" download>
             <b-icon icon="download" aria-hidden="true"></b-icon>
             GPe58_boxgrid_data.csv
             </a>
         </div>
 
         <div>
+            <a href="/static/files/GPe60_boxgrid_data.csv" download>
             <b-icon icon="download" aria-hidden="true"></b-icon>
           GPe60_boxgrid_data.csv
+          </a>
         </div>
 
         <div>
+            <a href="/static/files/GPe62_boxgrid_data.csv" download>
             <b-icon icon="download" aria-hidden="true"></b-icon>
           GPe62_boxgrid_data.csv
+          </a>
         </div>
 
         <div>
+            <a href="/static/files/GPe64_boxgrid_data.csv" download>
             <b-icon icon="download" aria-hidden="true"></b-icon>
           GPe64_boxgrid_data.csv
+          </a>
         </div>
 
         <div>
+            <a href="/static/files/GPe66_boxgrid_data.csv" download>
             <b-icon icon="download" aria-hidden="true"></b-icon>
           GPe66_boxgrid_data.csv
+          </a>
         </div>
 
         <div>
+            <a href="/static/files/GPe68_boxgrid_data.csv" download>
             <b-icon icon="download" aria-hidden="true"></b-icon>
           GPe68_boxgrid_data.csv
+          </a>
         </div>
 
         <div>
+            <a href="/static/files/SNr81_boxgrid_data.csv" download>
             <b-icon icon="download" aria-hidden="true"></b-icon>
           SNr81_boxgrid_data.csv
+          </a>
         </div>
 
         <div>
+            <a href="/static/files/SNr83_boxgrid_data.csv" download>
             <b-icon icon="download" aria-hidden="true"></b-icon>
           SNr83_boxgrid_data.csv
+          </a>
         </div>
 
         <div>
+            <a href="/static/files/SNr85_boxgrid_data.csv" download>
             <b-icon icon="download" aria-hidden="true"></b-icon>
           SNr85_boxgrid_data.csv
+          </a>
         </div>
 
         <div>
+            <a href="/static/files/SNr87_boxgrid_data.csv" download>
             <b-icon icon="download" aria-hidden="true"></b-icon>
           SNr87_boxgrid_data.csv
+          </a>
         </div>
 
         <div>
+            <a href="/static/files/SNr89_boxgrid_data.csv" download>
             <b-icon icon="download" aria-hidden="true"></b-icon>
           SNr89_boxgrid_data.csv
+          </a>
         </div>
 
         <div>
+            <a href="/static/files/SNr91_boxgrid_data.csv" download>
             <b-icon icon="download" aria-hidden="true"></b-icon>
           SNr91_boxgrid_data.csv
+          </a>
         </div>
 
       </div>
@@ -329,11 +352,11 @@ body {
   position: absolute;
   left: 20px;
   border-left: thin solid grey;
-  border-bottom: none;
+  border-bottom: thick solid grey;
   border-right: thin solid grey;
   border-top: thick solid grey;
   background-color: rgba(20, 20, 20, 1);
-  font-style: italic;
+  font-style: normal;
   font-size: 13px;
   color: white;
 }

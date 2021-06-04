@@ -60,6 +60,13 @@ module.exports = {
         }
       },
       {
+        test: /\.(csv|xlsx|xls)$/,
+        loader: 'file-loader',
+        options: {
+            name: utils.assetsPath(`files/[name].[ext]`)
+        }
+    },
+      {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {
