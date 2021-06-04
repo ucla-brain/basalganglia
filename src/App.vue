@@ -1,45 +1,130 @@
 <template>
   <div id="topdiv">
-    <div id="openseadragon" style="width: 100%; height: 600px;">
+    <div id="openseadragon" style="width: 100%; height: 600px">
       <div id="allClearToggles">
-        <input type="checkbox" id="checkbox" v-model="selectAllChecked" @change="selectAll()" />
-        <label class="cursor-pointer hover:text-blue-600" for="checkbox">All</label>
+        <input
+          type="checkbox"
+          id="checkbox"
+          v-model="selectAllChecked"
+          @change="selectAll()"
+        />
+        <label class="cursor-pointer hover:text-blue-600" for="checkbox"
+          >All</label
+        >
         <p
           class="clearButton cursor-pointer hover:text-blue-600"
           id="clearToggle"
           v-on:click="clear()"
-        >Clear</p>
+        >
+          Clear
+        </p>
       </div>
       <multilevel-accordion :tree="tree" :marginLeft="2">
         <div slot-scope="{ tree, expanded, leaf }">
           <div
             class="relative mb-3 border rounded-full text-white"
-            style="transition: box-shadow 0.5s, background-color 0.5s, color 0.5s; border-style:none;"
+            style="
+              transition: box-shadow 0.5s, background-color 0.5s, color 0.5s;
+              border-style: none;
+            "
           >
             <input
               v-if="leaf"
               v-model="checked"
               type="checkbox"
               class="cursor-pointer"
-              :id="tree.text+'_checkbox'"
+              :id="tree.text + '_checkbox'"
               :value="tree.text"
               @change="select(tree.text)"
             />
             <label
               v-if="leaf"
-              :for="tree.text+'_checkbox'"
+              :for="tree.text + '_checkbox'"
               class="cursor-pointer hover:text-blue-600"
               :class="tree.text"
-            >{{ tree.text.split("_")[0] }}</label>
+              >{{ tree.text.split("_")[0] }}</label
+            >
             <p
               v-if="!leaf"
               :id="tree.text"
-              class="domain cursor-pointer relative text-left hover:text-blue-600"
-              style="top: 0.05rem; left: 10px; font-size: 13px;"
-            >{{ expanded ? '−' : '+' }} {{ tree.text }}</p>
+              class="
+                domain
+                cursor-pointer
+                relative
+                text-left
+                hover:text-blue-600
+              "
+              style="top: 0.05rem; left: 10px; font-size: 13px"
+            >
+              {{ expanded ? "−" : "+" }} {{ tree.text }}
+            </p>
           </div>
         </div>
       </multilevel-accordion>
+      <div id="fileDownloads">
+        <div>
+            <a href="./GPe58_boxgrid_data.csv">
+            <b-icon icon="download" aria-hidden="true"></b-icon>
+            GPe58_boxgrid_data.csv
+            </a>
+        </div>
+
+        <div>
+            <b-icon icon="download" aria-hidden="true"></b-icon>
+          GPe60_boxgrid_data.csv
+        </div>
+
+        <div>
+            <b-icon icon="download" aria-hidden="true"></b-icon>
+          GPe62_boxgrid_data.csv
+        </div>
+
+        <div>
+            <b-icon icon="download" aria-hidden="true"></b-icon>
+          GPe64_boxgrid_data.csv
+        </div>
+
+        <div>
+            <b-icon icon="download" aria-hidden="true"></b-icon>
+          GPe66_boxgrid_data.csv
+        </div>
+
+        <div>
+            <b-icon icon="download" aria-hidden="true"></b-icon>
+          GPe68_boxgrid_data.csv
+        </div>
+
+        <div>
+            <b-icon icon="download" aria-hidden="true"></b-icon>
+          SNr81_boxgrid_data.csv
+        </div>
+
+        <div>
+            <b-icon icon="download" aria-hidden="true"></b-icon>
+          SNr83_boxgrid_data.csv
+        </div>
+
+        <div>
+            <b-icon icon="download" aria-hidden="true"></b-icon>
+          SNr85_boxgrid_data.csv
+        </div>
+
+        <div>
+            <b-icon icon="download" aria-hidden="true"></b-icon>
+          SNr87_boxgrid_data.csv
+        </div>
+
+        <div>
+            <b-icon icon="download" aria-hidden="true"></b-icon>
+          SNr89_boxgrid_data.csv
+        </div>
+
+        <div>
+            <b-icon icon="download" aria-hidden="true"></b-icon>
+          SNr91_boxgrid_data.csv
+        </div>
+
+      </div>
     </div>
     <!-- end of openseadragon -->
   </div>
@@ -169,13 +254,13 @@ export default {
         // Remove each selected layer
         this.select(layers[i]);
       }
-    }
+    },
   },
   mounted() {
     const prefix = this.githubPrefix;
     this.viewer = OpenSeadragon({
       id: "openseadragon",
-      prefixUrl: "/viewer/static/images/",
+      prefixUrl: "/basalganglia/static/images/",
       tileSources: this.githubPrefix + "/static/output/ara-whitebg.dzi",
       showNavigator: true,
     });
@@ -189,7 +274,7 @@ export default {
       });
     });
     this.allCaseIds = cases;
-  }
+  },
 };
 </script>
 
@@ -235,8 +320,27 @@ body {
   color: white;
 }
 
+#fileDownloads {
+  width: 15%;
+  height: 100px;
+  top: 450px;
+  z-index: 1;
+  overflow-y: auto;
+  position: absolute;
+  left: 20px;
+  border-left: thin solid grey;
+  border-bottom: none;
+  border-right: thin solid grey;
+  border-top: thick solid grey;
+  background-color: rgba(20, 20, 20, 1);
+  font-style: italic;
+  font-size: 13px;
+  color: white;
+}
+
 @media only screen and (max-width: 415px) {
-  .accordion-root, #allClearToggles {
+  .accordion-root,
+  #allClearToggles {
     width: 30%;
   }
 }

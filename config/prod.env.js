@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  GITHUB_PREFIX: '"/viewer"'
+  GITHUB_PREFIX: '"/basalganglia"'
 }

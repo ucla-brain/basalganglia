@@ -5,14 +5,14 @@ import App from './App'
 import router from './router'
 import VueTailwind from 'vue-tailwind'
 import VuePrism from "vue-prism";
-
-Vue.use(VuePrism);
-
 import "prismjs/themes/prism.css";
 import "./assets/styles/index.css";
+import { BootstrapVueIcons } from 'bootstrap-vue'
+import 'bootstrap-vue/dist/bootstrap-vue-icons.min.css'
 
 Vue.use(VueTailwind)
-
+Vue.use(BootstrapVueIcons)
+Vue.use(VuePrism)
 Vue.config.productionTip = false
 
 
