@@ -1,4 +1,6 @@
-# viewer
+# The mouse cortico-basal ganglia-thalamic connectivity map viewer
+
+This is an online visualization tool for the mouse cortico-basal ganglia-thalamic network project.
 
 > A Vue.js project
 
